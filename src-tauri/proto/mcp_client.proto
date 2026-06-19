@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ray.mcp_client;
+
+service McpClient {
+  rpc GetTools (GetToolsRequest) returns (GetToolsResponse);
+}
+
+message GetToolsRequest {
+}
+
+message GetToolsResponse {
+  repeated Tool result = 1;
+}
+
+message Tool {
+  string name = 1;
+  string description = 2;
+  string inputSchema = 3;
+  string outputSchema = 4;
+}
